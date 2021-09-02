@@ -23,11 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         val queue = Volley.newRequestQueue(this)
-
-        val url = getURL()
+        
         binding.findButton.setOnClickListener{
 
-            val stringRequest = StringRequest(Request.Method.GET, url,
+            val stringRequest = StringRequest(Request.Method.GET, getURL(),
                 Response.Listener { response ->
                     try{
                         extractDefinitionFromJSON(response)
